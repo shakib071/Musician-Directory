@@ -15,3 +15,7 @@ def add_musician(request):
     else:
         form =  MusicianForm()
     return render(request,'add_musician.html',{'form' : form})
+
+
+# def edit_musician(request,musician_id):
+
