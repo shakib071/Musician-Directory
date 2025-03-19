@@ -4,6 +4,15 @@ from .forms import MusicianForm
 
 # Create your views here.
 
+# def show_musician_list(request):
+
+#     musician_list = MusicianModel.objects.all()
+#     print(musician_list)
+#     return render(request,'show_musician_list.html',{'musician_list': musician_list})
+
+
+
+
 def add_musician(request):
 
     if request.method == "POST":

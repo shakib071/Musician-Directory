@@ -3,33 +3,40 @@
 
 {% block main_content %}
 
+
+{{album_list}}
+
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Musician Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Album Rating</th>
+        <th scope="col">Instrument Type</th>
+        <th scope="col">Album name</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
+      {% for x in  album_list %}
+
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{x.muscian.first_name}} {{x.muscian.last_name}}</th>
+        <td>{{x.muscian.email}}</td>
+        <td>{{x.rating}}</td>
+        <td>{{x.muscian.instrument_Type}}</td>
+        <td>{{x.album_name}}</td>
+        <td>{{x.release_date}}</td>
+        <td class="d-flex gap-2"> 
+           <a href=""><button>Edit</button></a>
+           <a href=""><button>Delete</button></a>
+         
+        </td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+
+      {% endfor %}
+ 
     </tbody>
   </table>
 
