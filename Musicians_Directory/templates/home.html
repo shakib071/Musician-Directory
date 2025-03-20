@@ -22,7 +22,7 @@
       {% for x in  album_list %}
 
       <tr>
-        <th scope="row">{{x.muscian.first_name}} {{x.muscian.last_name}}</th>
+        <td><a href="{% url "edit_musician" x.muscian.id %}">{{x.muscian.first_name}} {{x.muscian.last_name}}</a></td>
         <td>{{x.muscian.email}}</td>
         <td>{{x.rating}}</td>
         <td>{{x.muscian.instrument_Type}}</td>

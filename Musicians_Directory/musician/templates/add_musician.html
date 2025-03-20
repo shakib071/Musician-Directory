@@ -8,7 +8,7 @@
 <div class="container mt-4">
     <h2>Add Musician</h2>
     
-    <form method="post" action="{% url 'add_musician' %}">
+    <form method="post">
         {% csrf_token %}
         {% comment %} {{ form.as_p }} {% endcomment %}
         {{ form|crispy }}
