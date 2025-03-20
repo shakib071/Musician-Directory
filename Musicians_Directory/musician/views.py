@@ -19,7 +19,7 @@ def add_musician(request):
         form = MusicianForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("add_musician")
+            return redirect("homepage")
         
     else:
         form =  MusicianForm()

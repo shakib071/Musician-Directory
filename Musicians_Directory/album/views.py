@@ -11,7 +11,7 @@ def add_album(request):
         form = AlbumForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("add_album")
+            return redirect("homepage")
         
     else:
         form = AlbumForm()
