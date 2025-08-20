@@ -24,4 +24,5 @@ urlpatterns = [
     path('',views.home,name="homepage"),
     path('musician/',include('musician.urls')),
     path('album/',include('album.urls')),
+    path('auth/',include('authentication.urls'))
 ]

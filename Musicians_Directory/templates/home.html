@@ -13,7 +13,9 @@
         <th scope="col">Instrument Type</th>
         <th scope="col">Album name</th>
         <th scope="col">Release Date</th>
+        {% if user.is_authenticated %}
         <th scope="col">Actions</th>
+        {%endif%}
       </tr>
     </thead>
     <tbody>
@@ -26,6 +28,7 @@
         <td>{{x.muscian.instrument_Type}}</td>
         <td>{{x.album_name}}</td>
         <td>{{x.release_date}}</td>
+        {% if user.is_authenticated %}
         <td class="d-flex gap-2"> 
            <a href="{% url "edit_album" x.id %}"><button>Edit</button></a>
            {% comment %} <a href="{% url "edit_album" x.id %}"><button>Edit</button></a> {% endcomment %}
@@ -33,6 +36,7 @@
            <a href="{% url "delete_album" x.id %}"><button>Delete</button></a>
          
         </td>
+        {%endif%}
       </tr>
 
       {% endfor %}

@@ -4,17 +4,19 @@
 
 {% block main_content %}
 
-
-<div class="container mt-4">
-    <h2>Add Album</h2>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card shadow-lg p-4 w-100" style="max-width: 600px;">
+    <h3 class="text-center mb-4 text-success">🎶 Add New Album</h3>
     
     <form method="post">
-        {% csrf_token %}
-        {% comment %} {{ form.as_p }} {% endcomment %}
-        {{ form|crispy }}
-        <button class="btn btn-primary">Submit</button>
-    </form>
-</div>
+      {% csrf_token %}
+      {{ form|crispy }}
 
+      <div class="d-grid mt-3">
+        <button type="submit" class="btn btn-success btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 {% endblock %}
